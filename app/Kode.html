@@ -9,9 +9,9 @@ main>*{animation:up .5s cubic-bezier(.2,.8,.2,1) both}main>*:nth-child(2){animat
 @media (prefers-reduced-motion: reduce){*{animation:none!important}}
 
 </style>
-<style>body{margin:0;background:#0B1630;min-height:100vh;display:flex;justify-content:center;align-items:flex-start}#stage{width:390px;height:844px;overflow:auto;position:relative;background:#EDF2F8}</style></head><body><div id="stage" data-w="390" data-h="844"></div><template id="tpl">
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#0B1630}body{display:flex;justify-content:center}#stage{width:100%;max-width:430px;height:100vh;height:100dvh;overflow:hidden;background:#EDF2F8}#stage>div{width:100%!important;height:100%!important;box-sizing:border-box;overflow-x:hidden!important;overflow-y:auto!important}</style></head><body><div id="stage"></div><template id="tpl">
 
-<div style="width: 390px; height: 844px; overflow: hidden; display: flex; flex-direction: column; background: #EDF2F8; color: #16233A; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+<div style="width: 100%; height: 100%; overflow: hidden; display: flex; flex-direction: column; background: #EDF2F8; color: #16233A; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
 <header style="flex-shrink: 0; display: flex; align-items: center; gap: 8px; padding: 18px 16px 8px"><a href="Main.html" aria-label="Kembali" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #16233A"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M15 5l-7 7 7 7"></path></svg></a><div><div style="font-size: 17px; font-weight: 700">Daftar</div></div></header><main style="flex: 1; min-height: 0; overflow: auto; padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 14px">
 <h1 style="font-family: 'Archivo', sans-serif; font-stretch: 68%; font-weight: 850; text-transform: uppercase; line-height: 1; margin: 0; font-size: 52px; line-height: 0.98">Punya kode<br>mentor?</h1>
 <p style="margin: 0; font-size: 15px; line-height: 23px; color: #4B5A72">Minta kodenya ke mentormu, lalu masukkan di sini.</p>

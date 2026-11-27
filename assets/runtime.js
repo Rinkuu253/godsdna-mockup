@@ -44,7 +44,7 @@ const fire=(e,types)=>{for(let n=e.target;n&&n!==stage;n=n.parentNode){for(const
 stage.addEventListener('click',e=>{if(e.target.closest('[data-soon]')){e.preventDefault();alert('Layar verifikasi belum didesain.');return}fire(e,['click'])});
 stage.addEventListener('input',e=>fire(e,['input','change']));
 stage.addEventListener('submit',e=>{e.preventDefault();fire(e,['submit'])});
-const fit=()=>{stage.style.zoom=Math.min(1,innerWidth/+stage.dataset.w)};
-addEventListener('resize',fit);fit();
+const scrollers=()=>{const root=stage.firstElementChild;if(!root||getComputedStyle(root).flexDirection!='column')return;for(const c of root.children){const s=getComputedStyle(c);if(+s.flexGrow>0){c.style.minHeight='0';c.style.overflowY='auto';if(s.display=='flex'&&s.flexDirection=='column')for(const k of c.children)k.style.flexShrink='0'}}};
+const paint=__paint;window.__paint=()=>{paint();if(!location.pathname.includes('dashboard'))scrollers()};
 __paint();o.componentDidMount&&o.componentDidMount();
 })();
