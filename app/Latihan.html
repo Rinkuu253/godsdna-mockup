@@ -1,0 +1,37 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>God's DNA · Mockup</title><link rel="stylesheet" href="../assets/fonts.css">
+
+<style>
+body{margin:0}
+a{color:#24508A}a:hover{color:#163A68}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #E6A93A;outline-offset:2px}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+main>*{animation:up .5s cubic-bezier(.2,.8,.2,1) both}main>*:nth-child(2){animation-delay:.07s}main>*:nth-child(3){animation-delay:.14s}main>*:nth-child(4){animation-delay:.21s}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:none}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+@keyframes tw{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes fly{0%{transform:translate(-40px,30px) scale(.6);opacity:0}100%{transform:none;opacity:1}}
+</style>
+<style>body{margin:0;background:#0B1630;min-height:100vh;display:flex;justify-content:center;align-items:flex-start}#stage{width:390px;height:844px;overflow:auto;position:relative;background:#EDF2F8}</style></head><body><div id="stage" data-w="390" data-h="844"></div><template id="tpl">
+
+<div style="width: 390px; height: 844px; overflow: hidden; display: flex; flex-direction: column; background: #EDF2F8; color: #16233A; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+<header style="flex-shrink: 0; display: flex; align-items: center; gap: 8px; padding: 18px 16px 8px"><a href="Materi.html" aria-label="Kembali" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #16233A"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M15 5l-7 7 7 7"></path></svg></a><div><div style="font-size: 12px; font-weight: 600; color: #4B5A72">Soal {{ no }} dari 2</div><div style="font-size: 17px; font-weight: 700">Latihan</div></div></header><main style="flex: 1; min-height: 0; overflow: auto; padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 14px">
+<h1 style="font-family: 'Archivo', sans-serif; font-stretch: 68%; font-weight: 850; text-transform: uppercase; line-height: 1; margin: 0; font-size: 32px; line-height: 1.05; margin: 12px 0 4px">{{ question }}</h1>
+<sc-for list="{{ options }}" as="o" hint-placeholder-count="3"><button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 60px; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; gap: 10px; text-align: left; padding: 12px 16px; border-radius: 14px; border: 2px solid {{ o.border }}; background: {{ o.bg }}; color: #16233A; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; animation: {{ o.anim }}"><span>{{ o.label }}</span><span style="font-size: 12px; font-weight: 700">{{ o.tag }}</span></button></sc-for>
+<sc-if value="{{ answered }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 14px"><div role="status" style="padding: 16px; border-radius: 14px; background: {{ fbBg }}; color: {{ fbInk }}; font-weight: 700; font-size: 14px; animation: pop .35s ease-out">{{ feedback }}</div>
+<sc-if value="{{ first }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ next }}" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer">Soal berikutnya</button></sc-if>
+<sc-if value="{{ last }}" hint-placeholder-val="{{ false }}"><a href="Refleksi.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer">Lanjut</a></sc-if></div></sc-if></main>
+</div>
+</template><script>class DCLogic{constructor(){this.props={}}setState(s){Object.assign(this.state,typeof s=="function"?s(this.state):s);window.__paint&&__paint()}forceUpdate(){window.__paint&&__paint()}}
+
+class Component extends DCLogic {
+  state = { q: 0, sel: null };
+  renderVals() { const Q = [['Siapa yang disebut ciptaan baru?', ['Yang rajin pelayanan', 'Yang ada di dalam Kristus', 'Yang tidak pernah gagal'], 1], ['Apa yang terjadi dengan yang lama?', ['Sudah berlalu', 'Tetap menentukan hidupmu', 'Harus diulang'], 0]];
+    const { q, sel } = this.state; const [question, labels, key] = Q[q]; const done = sel !== null;
+    return { no: q + 1, question, answered: done, first: q === 0, last: q === 1, next: () => this.setState({ q: 1, sel: null }),
+      options: labels.map((label, i) => { const good = done && i === key; const bad = done && i === sel && i !== key;
+        return { label, on: sel === i, pick: () => { if (!done) this.setState({ sel: i }); }, border: good ? '#2C7A60' : bad ? '#8A3418' : '#B5C6DA', bg: good ? '#DCEFE7' : bad ? '#F8E2DC' : '#FAFCFE', tag: good ? 'Benar' : bad ? 'Jawabanmu' : '', anim: bad ? 'shake .35s' : 'none' }; }),
+      feedback: sel === key ? 'Mantap, jawabanmu benar.' : 'Belum tepat. Jawaban yang benar: ' + labels[key] + '.', fbBg: sel === key ? '#DCEFE7' : '#F8E2DC', fbInk: sel === key ? '#1D5443' : '#8A3418' }; }
+}
+</script><script src="../assets/runtime.js"></script></body></html>

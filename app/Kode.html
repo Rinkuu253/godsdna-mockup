@@ -1,0 +1,36 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>God's DNA · Mockup</title><link rel="stylesheet" href="../assets/fonts.css">
+
+<style>
+body{margin:0}
+a{color:#24508A}a:hover{color:#163A68}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #E6A93A;outline-offset:2px}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+main>*{animation:up .5s cubic-bezier(.2,.8,.2,1) both}main>*:nth-child(2){animation-delay:.07s}main>*:nth-child(3){animation-delay:.14s}main>*:nth-child(4){animation-delay:.21s}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+</style>
+<style>body{margin:0;background:#0B1630;min-height:100vh;display:flex;justify-content:center;align-items:flex-start}#stage{width:390px;height:844px;overflow:auto;position:relative;background:#EDF2F8}</style></head><body><div id="stage" data-w="390" data-h="844"></div><template id="tpl">
+
+<div style="width: 390px; height: 844px; overflow: hidden; display: flex; flex-direction: column; background: #EDF2F8; color: #16233A; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+<header style="flex-shrink: 0; display: flex; align-items: center; gap: 8px; padding: 18px 16px 8px"><a href="Main.html" aria-label="Kembali" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #16233A"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M15 5l-7 7 7 7"></path></svg></a><div><div style="font-size: 17px; font-weight: 700">Daftar</div></div></header><main style="flex: 1; min-height: 0; overflow: auto; padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 14px">
+<h1 style="font-family: 'Archivo', sans-serif; font-stretch: 68%; font-weight: 850; text-transform: uppercase; line-height: 1; margin: 0; font-size: 52px; line-height: 0.98">Punya kode<br>mentor?</h1>
+<p style="margin: 0; font-size: 15px; line-height: 23px; color: #4B5A72">Minta kodenya ke mentormu, lalu masukkan di sini.</p>
+<label for="code" style="margin-top: 14px; font-size: 13px; font-weight: 700">Kode mentor</label>
+<input id="code" value="{{ code }}" onChange="{{ type }}" placeholder="SARAH-7K2M" autocomplete="off" style="width: 100%; height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #6F849D; border-radius: 14px; background: #FFFFFF; color: #16233A; font: inherit; font-size: 15px; height: 64px; text-align: center; font-size: 22px; font-weight: 700; letter-spacing: 0.12em">
+<sc-if value="{{ error }}" hint-placeholder-val="{{ false }}"><div role="alert" style="padding: 14px 16px; border-radius: 14px; background: #F8E2DC; color: #8A3418; font-size: 14px; line-height: 21px"><b>Kode tidak ditemukan.</b><br>Cek lagi hurufnya, atau minta kode baru ke mentormu.</div></sc-if>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px">
+<sc-if value="{{ goOk }}" hint-placeholder-val="{{ false }}"><a href="Konfirmasi.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer">Cek kode</a></sc-if>
+<sc-if value="{{ goFull }}" hint-placeholder-val="{{ false }}"><a href="MentorPenuh.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer">Cek kode</a></sc-if>
+<sc-if value="{{ goBad }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ check }}" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer">Cek kode</button></sc-if>
+<sc-if value="{{ notReady }}" hint-placeholder-val="{{ true }}"><button type="button" disabled style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; opacity: 0.45">Cek kode</button></sc-if>
+<a href="BelumPunyaKode.html" style="min-height: 44px; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: 14px; text-decoration: none">Belum punya kode?</a></div></main>
+</div>
+</template><script>class DCLogic{constructor(){this.props={}}setState(s){Object.assign(this.state,typeof s=="function"?s(this.state):s);window.__paint&&__paint()}forceUpdate(){window.__paint&&__paint()}}
+
+class Component extends DCLogic {
+  state = { code: '', error: false };
+  renderVals() { const c = this.state.code; const ready = c.length >= 6; const bad = c.startsWith('SALAH'); const full = c.startsWith('PENUH');
+    return { code: c, type: (e) => this.setState({ code: e.target.value.toUpperCase(), error: false }), check: () => this.setState({ error: true }), error: this.state.error,
+      notReady: !ready, goOk: ready && !bad && !full, goFull: ready && full, goBad: ready && bad }; }
+}
+</script><script src="../assets/runtime.js"></script></body></html>

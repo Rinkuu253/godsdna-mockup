@@ -1,0 +1,36 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>God's DNA · Mockup</title><link rel="stylesheet" href="../assets/fonts.css">
+
+<style>
+body{margin:0}
+a{color:#24508A}a:hover{color:#163A68}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #E6A93A;outline-offset:2px}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+main>*{animation:up .5s cubic-bezier(.2,.8,.2,1) both}main>*:nth-child(2){animation-delay:.07s}main>*:nth-child(3){animation-delay:.14s}main>*:nth-child(4){animation-delay:.21s}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+</style>
+<style>body{margin:0;background:#0B1630;min-height:100vh;display:flex;justify-content:center;align-items:flex-start}#stage{width:390px;height:844px;overflow:auto;position:relative;background:#EDF2F8}</style></head><body><div id="stage" data-w="390" data-h="844"></div><template id="tpl">
+
+<div style="width: 390px; height: 844px; overflow: hidden; display: flex; flex-direction: column; background: #EDF2F8; color: #16233A; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+<header style="flex-shrink: 0; display: flex; align-items: center; gap: 8px; padding: 18px 16px 8px"><a href="KenalModul.html" aria-label="Kembali" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #16233A"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M15 5l-7 7 7 7"></path></svg></a><div><div style="font-size: 17px; font-weight: 700">Data diri</div></div></header><main style="flex: 1; min-height: 0; overflow: auto; padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 14px">
+<h1 style="font-family: 'Archivo', sans-serif; font-stretch: 68%; font-weight: 850; text-transform: uppercase; line-height: 1; margin: 0; font-size: 48px; line-height: 0.98">Sudah<br>penasaran?</h1>
+<p style="margin: 0; font-size: 14px; color: #4B5A72">Isi data dirimu. Kak Sarah akan menyetujui pendaftaranmu.</p>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="nama" style="font-size: 13px; font-weight: 700">Nama lengkap</label><input id="nama" type="text" placeholder="Nama kamu" autocomplete="name" style="width: 100%; height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #6F849D; border-radius: 14px; background: #FFFFFF; color: #16233A; font: inherit; font-size: 15px"></div><div style="display: flex; flex-direction: column; gap: 6px"><label for="email" style="font-size: 13px; font-weight: 700">Email</label><input id="email" type="email" placeholder="nama@email.com" autocomplete="email" style="width: 100%; height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #6F849D; border-radius: 14px; background: #FFFFFF; color: #16233A; font: inherit; font-size: 15px"></div><div style="display: flex; flex-direction: column; gap: 6px"><label for="hp" style="font-size: 13px; font-weight: 700">Nomor HP</label><input id="hp" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel" style="width: 100%; height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #6F849D; border-radius: 14px; background: #FFFFFF; color: #16233A; font: inherit; font-size: 15px"></div><div style="display: flex; flex-direction: column; gap: 6px"><label for="pw" style="font-size: 13px; font-weight: 700">Password</label><input id="pw" value="{{ pw }}" onChange="{{ typePw }}" type="password" placeholder="Minimal 8 karakter" autocomplete="new-password" style="width: 100%; height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #6F849D; border-radius: 14px; background: #FFFFFF; color: #16233A; font: inherit; font-size: 15px"></div><div style="display: flex; flex-direction: column; gap: 6px"><label for="pw2" style="font-size: 13px; font-weight: 700">Konfirmasi password</label><input id="pw2" type="password" value="{{ pw2 }}" onChange="{{ typePw2 }}" placeholder="Ulangi password" autocomplete="new-password" aria-describedby="pwmsg" aria-invalid="{{ mismatch }}" style="width: 100%; height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #6F849D; border-radius: 14px; background: #FFFFFF; color: #16233A; font: inherit; font-size: 15px">
+<div id="pwmsg" role="status" style="min-height: 18px; font-size: 12px; font-weight: 700; color: {{ msgColor }}">{{ msg }}</div></div>
+<sc-if value="{{ ok }}" hint-placeholder-val="{{ false }}"><a href="Menunggu.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; margin-top: auto">Kirim pendaftaran</a></sc-if>
+<sc-if value="{{ notOk }}" hint-placeholder-val="{{ true }}"><button type="button" disabled style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; flex-shrink: 0; border: 0; border-radius: 14px; background: linear-gradient(180deg,#2F62A4,#24508A); box-shadow: 0 4px 0 #163A68; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-stretch: 80%; font-weight: 800; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; margin-top: auto; opacity: 0.45">Kirim pendaftaran</button></sc-if></main>
+</div>
+</template><script>class DCLogic{constructor(){this.props={}}setState(s){Object.assign(this.state,typeof s=="function"?s(this.state):s);window.__paint&&__paint()}forceUpdate(){window.__paint&&__paint()}}
+
+class Component extends DCLogic {
+  
+  state = { pw: '', pw2: '' };
+  renderVals() {
+    const { pw, pw2 } = this.state;
+    const short = pw.length > 0 && pw.length < 8; const mismatch = pw2.length > 0 && pw !== pw2; const ok = pw.length >= 8 && pw === pw2;
+    return { pw, pw2, mismatch, ok, notOk: !ok,
+      typePw: (e) => this.setState({ pw: e.target.value }), typePw2: (e) => this.setState({ pw2: e.target.value }),
+      msg: short ? 'Password minimal 8 karakter' : mismatch ? 'Password belum sama' : ok ? 'Password cocok' : '', msgColor: ok ? '#1D5443' : '#8A3418' };
+  }
+}
+</script><script src="../assets/runtime.js"></script></body></html>
